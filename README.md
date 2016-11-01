@@ -3,6 +3,8 @@
 
 > Theme generator cli tool for Element.
 
+![](./media/element.gif)
+
 ## Installation
 ```shell
 npm i element-theme -D
@@ -11,13 +13,13 @@ npm i element-theme -D
 ## CLI
 ```shell
 # init variables file
-element-theme --init [file path]
+et --init [file path]
 
 # watch then build
-element-theme --watch [--config variable file path] [--out theme path]
+et --watch [--config variable file path] [--out theme path]
 
 # build
-element-theme [--config variable file path] [--out theme path] [--minimize]
+et [--config variable file path] [--out theme path] [--minimize]
 ```
 
 ## API

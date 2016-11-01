@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "Theme generator cli tool for Element",
   "bin": {
-    "element-theme": "./bin/element-theme"
+    "element-theme": "./bin/element-theme",
+    "et": "./bin/element-theme"
   },
   "files": [
     "bin",
