@@ -11,13 +11,13 @@ npm i element-theme -D
 ## CLI
 ```shell
 # init variables file
-element-theme --init [filePath]
+element-theme --init [file path]
 
-# watch variables file
-element-theme --watch [--config variable filePath] [--out themePath]
+# watch then build
+element-theme --watch [--config variable file path] [--out theme path]
 
 # build
-element-theme [--config variable filePath] [--out themePath] [--minimize]
+element-theme [--config variable file path] [--out theme path] [--minimize]
 ```
 
 ## API
@@ -26,30 +26,30 @@ var et = require('element-theme')
 
 // watch mode
 et.watch({
-  config: 'xxx',
-  out: 'xxx'
+  config: 'variables/path',
+  out: 'output/path'
 })
 
 // build
 et.run({
-  config: 'xxx',
-  out: 'xxx',
+  config: 'variables/path',
+  out: 'output/path',
   minimize: true
 })
 ```
 
 ## Options
 ### config
-Variable file path, default './element-theme-vars.css'.
+Variable file path, default `./element-variables.css`.
 
 ### out
-Theme output path, default './element-theme.css'.
+Theme output path, default `./theme`.
 
 ### minimize
 Compressed file.
 
 ### browsers
-set browsers
+set browsers, default `['ie > 9', 'last 2 version']`.
 
 ### watch
 watch variable file changes then build.
