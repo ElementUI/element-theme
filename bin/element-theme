@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+var main = require('../index.js')
+var config = {}
+
+console.log()
+process.on('exit', function () {
+  console.log()
+})
+
+program
+  .version(require('../package.json').version)
+  .option('-i --init [filePath]', 'init variables file')
+  .option('-w --watch', 'watch variable changes then build')
+  .option('-o --out [outPath]', 'output path', out => config.out = out)
+  .option('-m --minimize', 'compressed file', minimize => config.minimize = minimize !== false)
+  .option('-c --config [filePath]', 'variables file', config => config.config = config)
+  .option('-b --browsers <items>', 'set browsers', a => config.browsers = browsers.split(','))
+  .parse(process.argv)
+
+if (program.init) {
+  return main.init(program.init)
+}
+program.watch ? main.watch(config) : main.run(config)
