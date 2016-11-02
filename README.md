@@ -10,9 +10,10 @@
 ```shell
 npm i element-theme -D
 ```
-Or isntall global
+
+install `theme-default`
 ```shell
-npm i element-theme -g
+npm i element-theme-default -D
 ```
 
 ## CLI

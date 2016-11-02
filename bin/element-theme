@@ -2,6 +2,7 @@
 
 var program = require('commander')
 var main = require('../index.js')
+var check = require('../lib/gen-vars').check
 var config = {}
 
 console.log()
@@ -18,6 +19,8 @@ program
   .option('-c --config [filePath]', 'variables file', function (config) {config.config = config})
   .option('-b --browsers <items>', 'set browsers', function (a) {config.browsers = browsers.split(',')})
   .parse(process.argv)
+
+check()
 
 if (program.init) {
   return main.init(program.init)
