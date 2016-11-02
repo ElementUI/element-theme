@@ -7,6 +7,7 @@
 ![](./media/element.gif)
 
 ## Installation
+install local or global
 ```shell
 npm i element-theme -D
 ```
@@ -14,6 +15,8 @@ npm i element-theme -D
 install `theme-default`
 ```shell
 npm i element-theme-default -D
+# or from github
+npm i https://github.com/ElementUI/theme-default -D
 ```
 
 ## CLI
