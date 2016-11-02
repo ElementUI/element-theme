@@ -1,4 +1,5 @@
 # element-theme
+[![Build Status](https://travis-ci.org/QingWei-Li/element-theme.svg?branch=master)](https://travis-ci.org/QingWei-Li/element-theme)
 [![npm](https://img.shields.io/npm/v/element-theme.svg)](https://www.npmjs.com/package/element-theme)
 
 > Theme generator cli tool for Element.
@@ -8,6 +9,10 @@
 ## Installation
 ```shell
 npm i element-theme -D
+```
+Or isntall global
+```shell
+npm i element-theme -g
 ```
 
 ## CLI
@@ -22,7 +27,7 @@ et --watch [--config variable file path] [--out theme path]
 et [--config variable file path] [--out theme path] [--minimize]
 ```
 
-## API
+## Node API
 ```javascript
 var et = require('element-theme')
 

@@ -35,10 +35,15 @@
     "url": "https://github.com/ElementUI/element-theme/issues"
   },
   "author": "qingwei-li <cinwell.li@gmail.com> (https://github.com/QingWei-Li)",
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "license": "MIT",
+  "peerDependencies": {
+    "element-theme-default": "*"
+  },
   "dependencies": {
     "commander": "^2.9.0",
-    "element-theme-default": "git+https://github.com/ElementUI/theme-default.git",
     "gulp": "^3.9.1",
     "gulp-cssmin": "^0.1.7",
     "gulp-nop": "0.0.3",
@@ -47,6 +52,7 @@
     "postcss-salad": "^1.0.5"
   },
   "devDependencies": {
+    "element-theme-default": "git+https://github.com/ElementUI/theme-default.git",
     "xo": "^0.17.0"
   }
 }

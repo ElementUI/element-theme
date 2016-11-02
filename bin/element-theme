@@ -13,10 +13,10 @@ program
   .version(require('../package.json').version)
   .option('-i --init [filePath]', 'init variables file')
   .option('-w --watch', 'watch variable changes then build')
-  .option('-o --out [outPath]', 'output path', out => config.out = out)
-  .option('-m --minimize', 'compressed file', minimize => config.minimize = minimize !== false)
-  .option('-c --config [filePath]', 'variables file', config => config.config = config)
-  .option('-b --browsers <items>', 'set browsers', a => config.browsers = browsers.split(','))
+  .option('-o --out [outPath]', 'output path', function (out) {config.out = out})
+  .option('-m --minimize', 'compressed file', function (minimize) {config.minimize = minimize !== false})
+  .option('-c --config [filePath]', 'variables file', function (config) {config.config = config})
+  .option('-b --browsers <items>', 'set browsers', function (a) => {config.browsers = browsers.split(',')})
   .parse(process.argv)
 
 if (program.init) {
