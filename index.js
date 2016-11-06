@@ -14,7 +14,7 @@ exports.watch = function (opts) {
   }
 
   gulp.task('build', build)
-  gulp.watch(opts.config || config.variable, ['build'])
+  gulp.watch(opts.config || config.config, ['build'])
   task.fonts(Object.assign(opts, {message: 'build theme font'}))
   build()
 }

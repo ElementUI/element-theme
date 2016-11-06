@@ -60,10 +60,23 @@ Theme output path, default `./theme`.
 Compressed file.
 
 ### browsers
-set browsers, default `['ie > 9', 'last 2 version']`.
+set browsers, default `['ie > 9', 'last 2 versions']`.
 
 ### watch
 watch variable file changes then build.
+
+## Config
+You can configure some options in `element-theme` by putting it in package.json:
+```json
+{
+  "element-theme": {
+    "browsers": ["ie > 9", "last 2 versions"],
+    "out": "./theme",
+    "config": "./element-variables.css",
+    "minimize": false
+  }
+}
+```
 
 ## License
 MIT
