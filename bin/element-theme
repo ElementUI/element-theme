@@ -16,7 +16,7 @@ program
   .option('-w --watch', 'watch variable changes then build')
   .option('-o --out [outPath]', 'output path', function (out) {config.out = out})
   .option('-m --minimize', 'compressed file', function (minimize) {config.minimize = minimize !== false})
-  .option('-c --config [filePath]', 'variables file', function (config) {config.config = config})
+  .option('-c --config [filePath]', 'variables file', function (c) {config.config = c})
   .option('-b --browsers <items>', 'set browsers', function (a) {config.browsers = browsers.split(',')})
   .parse(process.argv)
 
