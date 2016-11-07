@@ -14,7 +14,7 @@ npm i element-theme -D
 
 install `theme-default`
 ```shell
-npm i element-theme-default -D
+npm i element-theme-default@next -D
 # or from github
 npm i https://github.com/ElementUI/theme-default -D
 ```
