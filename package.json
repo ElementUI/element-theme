@@ -49,9 +49,9 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-nop": "0.0.3",
     "gulp-postcss": "^6.2.0",
-    "gulp-replace": "^0.5.4",
     "ora": "^0.3.0",
-    "postcss-salad": "^1.0.6"
+    "postcss-salad": "^1.0.6",
+    "through2": "^2.0.3"
   },
   "devDependencies": {
     "element-theme-default": "git+https://github.com/ElementUI/theme-default.git",
