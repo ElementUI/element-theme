@@ -1,7 +1,20 @@
 var gulp = require('gulp')
+var series = require('run-sequence').use(gulp);
 var task = require('./lib/task')
 var vars = require('./lib/gen-vars')
 var config = require('./lib/config')
+
+var build = function (opts) {
+    return function buildTask() {
+      return task.build(Object.assign(opts, {message: 'build element theme'}))
+    }
+}
+
+var fonts = function (opts) {
+    return function fontsTask() {
+      return task.fonts(Object.assign(opts, {message: 'build theme font'}))
+    }
+}
 
 exports.init = function (filePath) {
   filePath = {}.toString.call(filePath) === '[object String]' ? filePath : ''
@@ -9,17 +22,18 @@ exports.init = function (filePath) {
 }
 
 exports.watch = function (opts) {
-  var build = function () {
-    task.build(Object.assign(opts, {message: 'watch element theme'}))
-  }
-
-  gulp.task('build', build)
+  gulp.task('build', build(opts))
+  exports.run(opts)
   gulp.watch(opts.config || config.config, ['build'])
-  task.fonts(Object.assign(opts, {message: 'build theme font'}))
-  build()
 }
 
-exports.run = function (opts) {
-  task.fonts(Object.assign(opts, {message: 'build theme font'}))
-  task.build(Object.assign(opts, {message: 'build element theme'}))
+exports.run = function (opts, cb) {
+  gulp.task('build', build(opts))
+  gulp.task('fonts', fonts(opts))
+  return new Promise(function (resolve, reject) {
+    series('build', 'fonts', function (err) {
+      err ? reject(err) : resolve();
+      if (err) { cb(err); }
+    });
+  });
 }
