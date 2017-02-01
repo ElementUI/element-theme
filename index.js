@@ -5,15 +5,15 @@ var vars = require('./lib/gen-vars')
 var config = require('./lib/config')
 
 var build = function (opts) {
-    return function buildTask() {
-      return task.build(Object.assign(opts, {message: 'build element theme'}))
-    }
+  return function () {
+    return task.build(Object.assign(opts, {message: 'build element theme'}))
+  }
 }
 
 var fonts = function (opts) {
-    return function fontsTask() {
-      return task.fonts(Object.assign(opts, {message: 'build theme font'}))
-    }
+  return function () {
+    return task.fonts(Object.assign(opts, {message: 'build theme font'}))
+  }
 }
 
 exports.init = function (filePath) {
@@ -32,8 +32,14 @@ exports.run = function (opts, cb) {
   gulp.task('fonts', fonts(opts))
   return new Promise(function (resolve, reject) {
     series('build', 'fonts', function (err) {
-      err ? reject(err) : resolve();
-      if (err) { cb(err); }
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+      if (typeof cb === 'function') {
+        cb(err);
+      }
     });
   });
 }
