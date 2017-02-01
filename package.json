@@ -51,6 +51,7 @@
     "gulp-postcss": "^6.2.0",
     "ora": "^0.3.0",
     "postcss-salad": "^1.0.6",
+    "run-sequence": "^1.2.2",
     "through2": "^2.0.3"
   },
   "devDependencies": {
