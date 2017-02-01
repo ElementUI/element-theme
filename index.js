@@ -30,16 +30,8 @@ exports.watch = function (opts) {
 exports.run = function (opts, cb) {
   gulp.task('build', build(opts))
   gulp.task('fonts', fonts(opts))
-  return new Promise(function (resolve, reject) {
-    series('build', 'fonts', function (err) {
-      if (err) {
-        reject(err);
-      } else {
-        resolve();
-      }
-      if (typeof cb === 'function') {
-        cb(err);
-      }
-    });
-  });
+  if (typeof cb === 'function') {
+    return series('build', 'fonts', cb);
+  }
+  return series('build', 'fonts');
 }
