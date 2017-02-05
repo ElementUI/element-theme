@@ -1,6 +1,6 @@
 {
   "name": "element-theme",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Theme generator cli tool for Element",
   "bin": {
     "element-theme": "./bin/element-theme",
