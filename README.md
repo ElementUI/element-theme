@@ -65,6 +65,9 @@ set browsers, default `['ie > 9', 'last 2 versions']`.
 ### watch
 watch variable file changes then build.
 
+### components
+A lists of components that you want to generate themes for.  All by default.
+
 ## Config
 You can configure some options in `element-theme` by putting it in package.json:
 ```json
@@ -74,7 +77,8 @@ You can configure some options in `element-theme` by putting it in package.json:
     "out": "./theme",
     "config": "./element-variables.css",
     "theme": "element-theme-default",
-    "minimize": false
+    "minimize": false,
+    "components": ["button", "input"]
   }
 }
 ```
