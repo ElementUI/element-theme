@@ -13,7 +13,7 @@ process.on('exit', function () {
 program
   .version(require('../package.json').version)
   .option('-i --init [filePath]', 'init variables file')
-  .option('-w --watch', 'watch variable changes then build')
+  .option('-w --watch', 'watch files changes then build', function (watch) {config.watch = watch.split(',')})
   .option('-o --out [outPath]', 'output path', function (out) {config.out = out})
   .option('-m --minimize', 'compressed file', function (minimize) {config.minimize = minimize !== false})
   .option('-c --config [filePath]', 'variables file', function (c) {config.config = c})

@@ -24,7 +24,12 @@ exports.init = function (filePath) {
 exports.watch = function (opts) {
   gulp.task('build', build(opts))
   exports.run(opts)
-  gulp.watch(opts.config || config.config, ['build'])
+  if (opts.watch instanceof Array === false) {
+    gulp.watch(config.config, ['build'])
+  } else {
+    var watchFiles = opts.watch.concat(opts.config || config.config)
+    gulp.watch(watchFiles, ['build'])
+  }
 }
 
 exports.run = function (opts, cb) {
