@@ -83,5 +83,9 @@ You can configure some options in `element-theme` by putting it in package.json:
 }
 ```
 
+## Customization
+Create your own css files inside of folder `theme-in/custom`.
+It will be compiled to `theme-out`.
+
 ## License
 MIT
