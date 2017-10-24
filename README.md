@@ -6,17 +6,19 @@
 
 ![](./media/element.gif)
 
+> The current version is compatible with element-ui@2.x. For element-ui@1.x, please check out the legacy branch.
+
 ## Installation
 install local or global
 ```shell
 npm i element-theme -D
 ```
 
-install `theme-default`
+install `theme-chalk`
 ```shell
-npm i element-theme-default -D
+npm i element-theme-chalk -D
 # or from github
-npm i https://github.com/ElementUI/theme-default -D
+npm i https://github.com/ElementUI/theme-chalk -D
 ```
 
 ## CLI
@@ -76,7 +78,7 @@ You can configure some options in `element-theme` by putting it in package.json:
     "browsers": ["ie > 9", "last 2 versions"],
     "out": "./theme",
     "config": "./element-variables.css",
-    "theme": "element-theme-default",
+    "theme": "element-theme-chalk",
     "minimize": false,
     "components": ["button", "input"]
   }
