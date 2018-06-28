@@ -1,28 +1,39 @@
 #!/usr/bin/env node
 
-var program = require('commander')
-var main = require('../index.js')
-var check = require('../lib/gen-vars').check
-var config = {}
+var program = require('commander');
+var main = require('../index.js');
+var check = require('../lib/gen-vars').check;
+var config = {};
 
-console.log()
+console.log();
 process.on('exit', function () {
-  console.log()
-})
+	console.log();
+});
 
 program
-  .version(require('../package.json').version)
-  .option('-i --init [filePath]', 'init variables file')
-  .option('-w --watch', 'watch variable changes then build')
-  .option('-o --out [outPath]', 'output path', function (out) {config.out = out})
-  .option('-m --minimize', 'compressed file', function (minimize) {config.minimize = minimize !== false})
-  .option('-c --config [filePath]', 'variables file', function (c) {config.config = c})
-  .option('-b --browsers <items>', 'set browsers', function (browsers) {config.browsers = browsers.split(',')})
-  .parse(process.argv)
+	.version(require('../package.json').version)
+	.option('-i --init [filePath]', 'init variables file')
+	.option('-w --watch', 'watch variable changes then build')
+	.option('-o --out [outPath]', 'output path', function (out) {
+		config.out = out;
+	})
+	.option('-m --minimize', 'compressed file', function (minimize) {
+		config.minimize = minimize !== false;
+	})
+	.option('-c --config [filePath]', 'variables file', function (c) {
+		config.config = c;
+	})
+	.option('-s --source [filePath]', 'Source path', function (s) {
+		config.themePath = s;
+	})
+	.option('-b --browsers <items>', 'set browsers', function (browsers) {
+		config.browsers = browsers.split(',');
+	})
+	.parse(process.argv);
 
-check()
+check();
 
 if (program.init) {
-  return main.init(program.init)
+	return main.init(program.init);
 }
-program.watch ? main.watch(config) : main.run(config)
+program.watch ? main.watch(config) : main.run(config);

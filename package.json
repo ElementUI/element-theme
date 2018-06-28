@@ -15,9 +15,9 @@
     "test": "xo"
   },
   "xo": {
-    "space": true,
+    "space": false,
     "rule": {
-      "semi": 0,
+      "semi": 1,
       "unicorn/no-process-exit": 0,
       "import/no-dynamic-require": 0
     }

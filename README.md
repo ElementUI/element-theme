@@ -27,10 +27,10 @@ npm i https://github.com/ElementUI/theme-chalk -D
 et --init [file path]
 
 # watch then build
-et --watch [--config variable file path] [--out theme path]
+et --watch [--config variable file path] [--out theme path] [-s --source filePath]
 
 # build
-et [--config variable file path] [--out theme path] [--minimize]
+et [--config variable file path] [--out theme path] [--minimize] [-s --source filePath]
 ```
 
 ## Node API
@@ -40,12 +40,14 @@ var et = require('element-theme')
 // watch mode
 et.watch({
   config: 'variables/path',
+  source: 'source/path'
   out: 'output/path'
 })
 
 // build
 et.run({
   config: 'variables/path',
+  source: 'source/path'
   out: 'output/path',
   minimize: true
 })
@@ -54,6 +56,9 @@ et.run({
 ## Options
 ### config
 Variable file path, default `./element-variables.css`.
+
+### source
+Theme source files path, default `element-theme-default module folder`.
 
 ### out
 Theme output path, default `./theme`.
@@ -76,6 +81,7 @@ You can configure some options in `element-theme` by putting it in package.json:
 {
   "element-theme": {
     "browsers": ["ie > 9", "last 2 versions"],
+    "source": "theme source files",
     "out": "./theme",
     "config": "./element-variables.css",
     "theme": "element-theme-chalk",
