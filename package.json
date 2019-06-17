@@ -44,17 +44,25 @@
     "element-theme-chalk": "*"
   },
   "dependencies": {
-    "commander": "^2.9.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-nop": "0.0.3",
-    "gulp-sass": "^3.1.0",
-    "ora": "^0.3.0",
-    "run-sequence": "^1.2.2"
+    "autoprefixer": "^9.6.0",
+    "commander": "^2.20.0",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-noop": "^1.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp4-run-sequence": "^0.3.3",
+    "ora": "^3.4.0"
   },
   "devDependencies": {
-    "element-theme-chalk": "^2.0.0-alpha.1",
-    "xo": "^0.17.0"
-  }
+    "element-theme-chalk": "^2.9.1",
+    "xo": "^0.24.0"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
 }
