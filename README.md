@@ -75,9 +75,9 @@ You can configure some options in `element-theme` by putting it in package.json:
 ```json
 {
   "element-theme": {
-    "browsers": ["ie > 9", "last 2 versions"],
+    // "browsers": ["ie > 9", "last 2 versions"],
     "out": "./theme",
-    "config": "./element-variables.css",
+    "config": "./element-variables.scss",
     "theme": "element-theme-chalk",
     "minimize": false,
     "components": ["button", "input"]

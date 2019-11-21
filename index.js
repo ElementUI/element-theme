@@ -1,5 +1,5 @@
 var gulp = require('gulp')
-var series = require('run-sequence').use(gulp)
+var series = require('gulp4-run-sequence').use(gulp)
 var task = require('./lib/task')
 var vars = require('./lib/gen-vars')
 var config = require('./lib/config')
