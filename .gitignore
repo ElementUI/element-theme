@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 npm-debug*
 .idea
+package-lock.json

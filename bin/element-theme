@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var program = require('commander')
-var main = require('../index.js')
-var check = require('../lib/gen-vars').check
-var config = {}
+let program = require('commander')
+let main = require('../index.js')
+let check = require('../lib/gen-vars').check
+let config = {}
 
 console.log()
 process.on('exit', function () {
@@ -17,7 +17,7 @@ program
   .option('-o --out [outPath]', 'output path', function (out) {config.out = out})
   .option('-m --minimize', 'compressed file', function (minimize) {config.minimize = minimize !== false})
   .option('-c --config [filePath]', 'variables file', function (c) {config.config = c})
-  .option('-b --browsers <items>', 'set browsers', function (browsers) {config.browsers = browsers.split(',')})
+  .option('-b --browsers <items>', 'set browsers', function (browsers) {config.browsers = browsers})
   .parse(process.argv)
 
 check()

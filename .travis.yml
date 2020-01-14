@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - 'stable'
-  - '6'
-  - '5'
-  - '4'
+  - '12'
+  - '10'
+  - '8'
+script: 
+  - ./bin/element-theme -i index.css
+  - ./bin/element-theme -c index.css -o outputs
+  - npm test
