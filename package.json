@@ -45,13 +45,12 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-nop": "0.0.3",
     "gulp-sass": "^3.1.0",
-    "ora": "^0.3.0",
-    "run-sequence": "^1.2.2"
+    "ora": "^0.3.0"
   },
   "devDependencies": {
     "element-theme-chalk": "^2.0.0-alpha.1",

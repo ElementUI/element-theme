@@ -1,8 +1,9 @@
 var gulp = require('gulp')
-var series = require('run-sequence').use(gulp)
 var task = require('./lib/task')
 var vars = require('./lib/gen-vars')
 var config = require('./lib/config')
+
+var noop = () => {}
 
 var build = function (opts) {
   return function () {
@@ -31,7 +32,7 @@ exports.run = function (opts, cb) {
   gulp.task('build', build(opts))
   gulp.task('fonts', fonts(opts))
   if (typeof cb === 'function') {
-    return series('build', 'fonts', cb);
+    return gulp.series("build", "fonts", cb)(noop)
   }
-  return series('build', 'fonts');
+  return gulp.series("build", "fonts")(noop)
 }
