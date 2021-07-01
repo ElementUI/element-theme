@@ -2,3 +2,5 @@ node_modules
 .DS_Store
 npm-debug*
 .idea
+pnpm-lock.yaml
+yarn.lock
